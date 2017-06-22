@@ -15,12 +15,17 @@
 
 $(call inherit-product, device/zte/axon7/full_axon7.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit some common XOSP stuff.
+$(call inherit-product, vendor/xosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_axon7
+$(call inherit-product, vendor/xosp/config/xosp.mk)
+
+PRODUCT_NAME := xosp_axon7
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="P996A01_N" \
     BUILD_FINGERPRINT="ZTE/P996A01_N/ailsa_ii:7.0/NRD90M/20170128.052618:user/release-keys" \
     PRIVATE_BUILD_DESC="P996A01_N-user 7.0 NRD90M 20170128.052618 release-keys"
+
+# Root	
+ROOT_METHOD := magisk
